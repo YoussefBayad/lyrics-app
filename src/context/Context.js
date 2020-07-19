@@ -2,7 +2,7 @@ import React, { createContext, useReducer } from 'react';
 import appReducer from './appReducer';
 
 //initial state
-const initialState = {};
+const initialState = { tracks: [] };
 
 // create context
 export const Context = createContext(initialState);

@@ -1,16 +1,16 @@
 import React, { useContext } from 'react';
 import { Context } from '../context/Context';
+import Track from './Track';
 
 const Tracks = () => {
   const { state } = useContext(Context);
-  console.log(state);
+  const { tracks } = state;
+  console.log(tracks);
   return (
-    <div>
-      {state[1] !== undefined ? (
-        <li>{state[1].track.album_name}</li>
-      ) : (
-        'Loading...'
-      )}
+    <div className="tracks">
+      {tracks[1] !== undefined
+        ? tracks.map((ob) => <Track key={ob.track.album_id} track={ob.track} />)
+        : 'Loading...'}
     </div>
   );
 };
