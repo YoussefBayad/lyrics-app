@@ -35,11 +35,11 @@ ul {
 .track {
   text-align: center;
   padding: 1rem;
-  color: white;
-  background-color: #e2e1e1;
+  padding-bottom: 4rem;
+  color: #4d4848;
+  background-color: #ececec;
   border-radius: 1rem;
-  cursor: pointer;
-  transition: all 0.5s ease-out;
+  position: relative;
 }
 .track h2 {
   margin-bottom: 1rem;
@@ -49,4 +49,29 @@ ul {
   color: #272727;
   opacity: 0.6;
   margin-bottom: 0.5rem;
+}
+.track button {
+  outline: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  display: block;
+  background-color: #ee6eaa;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  position: absolute;
+  bottom: 5%;
+  left: 32%;
+  transition: all 0.5s ease;
+}
+.track button:hover {
+  background-color: #e94290;
+}
+
+/* spinner*/
+.spinner {
+  width: 200px;
+  margin: 40px auto;
 }
