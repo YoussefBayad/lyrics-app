@@ -12,6 +12,7 @@ const More = () => {
     <div className={moreTracksOnLoading ? 'more more-is-loading' : 'more'}>
       {moreTracksOnLoading ? <Spinner /> : false}
       <button
+        className="btn"
         onClick={() => {
           increaseTracks();
           fMoreTracksOnLoading(true);

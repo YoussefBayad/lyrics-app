@@ -1,6 +1,8 @@
 import React, { useEffect, useContext } from 'react';
 import { Context } from '../context/Context';
+
 import Spinner from './Spinner';
+import { Link } from 'react-router-dom';
 const Lyrics = () => {
   const {
     state: { artist },
@@ -27,11 +29,16 @@ const Lyrics = () => {
     fetchItems();
   }, [artist, track]);
   return (
-    <div className="lyrics">
-      <h2>{track}</h2>
-      <h3>{artist}</h3>
-      {lyricsIsLoading ? <Spinner /> : <p>{lyrics}</p>}
-    </div>
+    <>
+      <div className="lyrics">
+        <h2>{track}</h2>
+        <h3>{artist}</h3>
+        {lyricsIsLoading ? <Spinner /> : <p>{lyrics}</p>}
+      </div>
+      <Link to="/" style={{ textDecoration: 'none' }}>
+        <button className="btn">Back Home</button>
+      </Link>
+    </>
   );
 };
 
