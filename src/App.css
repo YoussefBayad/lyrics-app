@@ -36,7 +36,8 @@ ul {
   text-align: center;
   padding: 1rem;
   padding-bottom: 4rem;
-  color: #4d4848;
+  color: #4d4848a6;
+
   background-color: #ececec;
   border-radius: 1rem;
   position: relative;
@@ -47,8 +48,8 @@ ul {
 }
 .artist-name {
   color: #272727;
-  opacity: 0.6;
-  margin-bottom: 0.5rem;
+
+  margin-bottom: 2rem;
 }
 .track button {
   outline: none;
@@ -73,5 +74,34 @@ ul {
 /* spinner*/
 .spinner {
   width: 200px;
-  margin: 40px auto;
+  margin: 0px auto;
+}
+
+/*More*/
+
+.more {
+  width: 100%;
+}
+
+.more button {
+  width: 200px;
+  height: 70px;
+  margin: 3rem auto;
+  outline: none;
+  border: none;
+  display: block;
+  color: white;
+  background-color: #d63ddb;
+
+  font-weight: bold;
+  font-size: 2rem;
+  cursor: pointer;
+  border-radius: 1rem;
+  transition: all 0.5s ease;
+}
+.more-is-loading {
+  margin: 0 auto;
+}
+.more button:hover {
+  background-color: #a715ac;
 }
