@@ -1,30 +1,21 @@
 import React, { useContext } from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import './App.css';
 import Nav from './components/Nav';
 import Tracks from './components/Tracks';
-import { Context } from './context/Context';
-import Fetch from './components/Fetch';
-import More from './components/More';
-import Spinner from './components/Spinner';
+import Lyrics from './components/Lyrics';
 
 const App = () => {
-  const { state } = useContext(Context);
-  const { tracks } = state;
   return (
-    <>
+    <Router>
       <Nav />
-      <Fetch />
-      <div className="container">
-        {tracks[1] !== undefined ? (
-          <>
-            <Tracks />
-            <More />
-          </>
-        ) : (
-          <Spinner />
-        )}
-      </div>
-    </>
+      <Switch>
+        <div className="container">
+          <Route exact path="/" component={Tracks} />
+          <Route exact path="/lyrics" component={Lyrics} />
+        </div>
+      </Switch>
+    </Router>
   );
 };
 

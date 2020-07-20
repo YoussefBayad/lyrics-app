@@ -1,8 +1,11 @@
 import React, { useEffect, useContext } from 'react';
 import { Context } from '../context/Context';
 const Fetch = () => {
-  const { state, updateState, fMoreTracksOnLoading } = useContext(Context);
-  const { tracksNumber } = state;
+  const {
+    state: { tracksNumber },
+    updateState,
+    fMoreTracksOnLoading,
+  } = useContext(Context);
   useEffect(() => {
     const fetchItems = async () => {
       const res = await fetch(
@@ -11,6 +14,7 @@ const Fetch = () => {
         .then((res) => res.json())
         .then((data) => data.message.body.track_list);
       updateState(res);
+      console.log(res);
       fMoreTracksOnLoading(false);
     };
 
