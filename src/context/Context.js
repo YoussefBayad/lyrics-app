@@ -6,6 +6,10 @@ const initialState = {
   tracks: [],
   tracksNumber: 5,
   moreTracksOnLoading: false,
+  artist: 'lmfao',
+  track: 'sexy',
+  lyrics: 'bla bla bla',
+  lyricsIsLoading: false,
 };
 
 // create context
@@ -32,10 +36,38 @@ export const ContextProvider = (props) => {
       moreTracksOnLoading: bool,
     });
   };
+  const updateArtistAndTrack = (artist, track) => {
+    console.log('inside artisr track dipatch');
+    dispatch({
+      type: 'ARTIST_TRACK',
+      artist,
+      track,
+    });
+  };
+  const updateLyrics = (lyrics) => {
+    dispatch({
+      type: 'UPDATE_LYRICS',
+      lyrics,
+    });
+  };
+  const lyricsLoading = (bool) => {
+    dispatch({
+      type: 'LYRICS_LOADING',
+      lyricsIsLoading: bool,
+    });
+  };
 
   return (
     <Context.Provider
-      value={{ state, updateState, increaseTracks, fMoreTracksOnLoading }}
+      value={{
+        state,
+        updateState,
+        increaseTracks,
+        fMoreTracksOnLoading,
+        updateArtistAndTrack,
+        updateLyrics,
+        lyricsLoading,
+      }}
     >
       {props.children}
     </Context.Provider>

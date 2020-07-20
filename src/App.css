@@ -105,3 +105,28 @@ ul {
 .more button:hover {
   background-color: #a715ac;
 }
+
+/* lyrics */
+
+.lyrics {
+  width: 80%;
+  text-align: center;
+  padding: 1rem;
+  margin: 2rem auto;
+  background-color: #eee;
+  color: white;
+  border-radius: 1rem;
+}
+.lyrics h2 {
+  color: #e94290;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+.lyrics h3 {
+  color: #272727a4;
+  margin-bottom: 2rem;
+}
+.lyrics p {
+  color: #333030;
+  line-height: 1.5;
+}

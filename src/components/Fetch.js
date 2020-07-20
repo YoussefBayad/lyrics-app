@@ -14,7 +14,6 @@ const Fetch = () => {
         .then((res) => res.json())
         .then((data) => data.message.body.track_list);
       updateState(res);
-      console.log(res);
       fMoreTracksOnLoading(false);
     };
 

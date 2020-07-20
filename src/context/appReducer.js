@@ -14,6 +14,12 @@ const appReducer = (state, action) => {
         ...state,
         moreTracksOnLoading: action.moreTracksOnLoading,
       };
+    case 'ARTIST_TRACK':
+      return { ...state, artist: action.artist, track: action.track };
+    case 'UPDATE_LYRICS':
+      return { ...state, lyrics: action.lyrics };
+    case 'LYRICS_LOADING':
+      return { ...state, lyricsIsLoading: action.lyricsIsLoading };
     default:
       return state;
   }
