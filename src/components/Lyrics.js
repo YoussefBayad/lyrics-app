@@ -12,22 +12,26 @@ const Lyrics = () => {
     updateLyrics,
     lyricsLoading,
   } = useContext(Context);
-  console.log(lyrics);
-  console.log(lyricsIsLoading);
+
   useEffect(() => {
     const fetchItems = async () => {
       const res = await fetch(
         `https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/matcher.lyrics.get?q_track=${track}%20and%20i%20know%20it&q_artist=${artist}&apikey=cff244a568a3934e2cfbc75aed24c9a5 `
       )
         .then((res) => res.json())
-        .then((data) => data.message.body.lyrics.lyrics_body);
+        .then((data) =>
+          Object.keys(data.message.body).length === 0
+            ? 'failed'
+            : data.message.body.lyrics.lyrics_body
+        );
+      console.log(res);
 
       updateLyrics(res);
       lyricsLoading(false);
     };
 
     fetchItems();
-  }, [artist, track]);
+  }, []);
   return (
     <>
       <div className="lyrics">

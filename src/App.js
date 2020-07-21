@@ -4,17 +4,19 @@ import './App.css';
 import Nav from './components/Nav';
 import Tracks from './components/Tracks';
 import Lyrics from './components/Lyrics';
+import Filter from './components/Filter';
 
 const App = () => {
   return (
     <Router>
       <Nav />
-      <Switch>
-        <div className="container">
+      <Filter />
+      <div className="container">
+        <Switch>
           <Route exact path="/" component={Tracks} />
-          <Route exact path="/lyrics" component={Lyrics} />
-        </div>
-      </Switch>
+          <Route path="/lyrics" component={Lyrics} />
+        </Switch>
+      </div>
     </Router>
   );
 };
