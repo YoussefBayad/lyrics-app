@@ -9,13 +9,15 @@ import Filter from './components/Filter';
 const App = () => {
   return (
     <Router>
-      <Nav />
-      <Filter />
-      <div className="container">
-        <Switch>
-          <Route exact path="/" component={Tracks} />
-          <Route path="/lyrics" component={Lyrics} />
-        </Switch>
+      <div>
+        <Nav />
+        <Filter />
+        <div className="container">
+          <Switch>
+            <Route exact path="/" component={Tracks} />
+            <Route path="/lyrics" component={Lyrics} />
+          </Switch>
+        </div>
       </div>
     </Router>
   );
